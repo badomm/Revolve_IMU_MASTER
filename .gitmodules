@@ -1,0 +1,3 @@
+[submodule "sam4e_base"]
+	path = sam4e_base
+	url = https://github.com/badomm/sam4e_base.git
