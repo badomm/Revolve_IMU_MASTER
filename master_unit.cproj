@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.2</ProjectVersion>
     <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
-    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <ProjectGuid>{c0802459-19f8-439e-b955-ba17de016e82}</ProjectGuid>
     <avrdevice>ATSAM4E16E</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -15,19 +15,323 @@
     <AssemblyName>master_unit</AssemblyName>
     <Name>master_unit</Name>
     <RootNamespace>master_unit</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.20.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_edbg>
+      <ToolOptions>
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
+      <ToolNumber>ATML2081030200002579</ToolNumber>
+      <ToolName>EDBG</ToolName>
+    </com_atmel_avrdbg_tool_edbg>
+    <com_atmel_avrdbg_tool_atmelice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
+      <ToolNumber>J41800024981</ToolNumber>
+      <ToolName>Atmel-ICE</ToolName>
+    </com_atmel_avrdbg_tool_atmelice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4e\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcc.linker.libraries.Libraries>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../cmsis/linkerScripts</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.miscellaneous.LinkerFlags>-Tsam4e16e_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4e\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+</ArmGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4e\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+      <Value>../sam4e_base</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -mfloat-abi=softfp -mfpu=fpv4-sp-d16</armgcc.compiler.miscellaneous.OtherFlags>
+  <armgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcc.linker.libraries.Libraries>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../cmsis/linkerScripts</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
+  <armgcc.linker.miscellaneous.LinkerFlags>-Tsam4e16e_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\sam4e\include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+      <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+  <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
+</ArmGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="master_unit.c">
+    <Compile Include="cmsis\src\startup_sam4e.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="cmsis\src\system_sam4e.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="drivers\MPU6000Registers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="output_led.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="output_led.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e-base.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\RunTimeStatsTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\event_groups.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\croutine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\deprecated_definitions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\event_groups.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\FreeRTOS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\list.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\mpu_wrappers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\portable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\projdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\queue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\semphr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\StackMacros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\include\timers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\portable\GCC\ARM_CM4F\portmacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\portable\MemMang\heap_4.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\FreeRTOS\Source\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\can.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\can.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\eefc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\eefc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\pio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\pio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\pmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\pmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\xpro-board.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4e_base\RevolveDrivers\xpro-board.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cmsis\" />
+    <Folder Include="cmsis\linkerScripts\" />
+    <Folder Include="cmsis\src\" />
+    <Folder Include="drivers\" />
+    <Folder Include="sam4e_base\" />
+    <Folder Include="sam4e_base\FreeRTOS\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\include\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\portable\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\portable\GCC\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\portable\GCC\ARM_CM4F\" />
+    <Folder Include="sam4e_base\FreeRTOS\Source\portable\MemMang\" />
+    <Folder Include="sam4e_base\RevolveDrivers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cmsis\linkerScripts\sam4e16e_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam4e16e_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam4e_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam4e_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sam4e_base\.git">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sam4e_base\FreeRTOS\Source\include\stdint.readme">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sam4e_base\FreeRTOS\Source\portable\readme.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sam4e_base\FreeRTOS\Source\readme.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sam4e_base\README.md">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
